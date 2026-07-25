@@ -1,6 +1,9 @@
+# 2026 FBLA Coding and Programming Challenge
 # Rooted
 
 A web application what allows users to discover and support local businesses. Users can browse businesses, leave reviews, save favorites, and business owners can manage their listings and deals.
+
+Built for the 2026 FBLA Coding and Programming Challenge
 
 ---
 
@@ -96,57 +99,6 @@ npm run preview      # Preview production build locally
 
 ---
 
-## Database Schema
-
-The application uses PostgreSQL through Supabase with the following tables:
-
-### Tables
-
-**businesses**
-- `id` (uuid, primary key)
-- `name`, `description`, `category`
-- `address`, `latitude`, `longitude`
-- `phone`, `website`
-- `average_price` (numeric)
-- `image_url`
-- `owner_id` (foreign key to profiles)
-- `created_at`, `updated_at`
-
-**reviews**
-- `id` (uuid, primary key)
-- `business_id` (foreign key)
-- `user_id` (foreign key)
-- `rating` (1-5)
-- `comment`
-- `created_at`, `updated_at`
-
-**favorites**
-- `id` (uuid, primary key)
-- `user_id` (foreign key)
-- `business_id` (foreign key)
-- `created_at`
-
-**deals**
-- `id` (uuid, primary key)
-- `business_id` (foreign key)
-- `title`, `description`
-- `valid_until`
-- `created_at`
-
-**profiles**
-- `id` (uuid, primary key, links to auth.users)
-- `email`, `full_name`
-- `created_at`, `updated_at`
-
-### Row-Level Security
-
-All tables have RLS policies:
-- Users can read all businesses and reviews
-- Users can only modify their own reviews and favorites
-- Business owners can modify their own businesses
-
----
-
 ## Project Structure
 
 ```
@@ -164,15 +116,6 @@ rooted/
 ├── package.json
 └── vite.config.ts
 ```
-
-### Key Files
-
-- `/src/app/services/authService.ts` - Authentication logic (sign up, sign in, session management)
-- `/src/app/services/dataService.ts` - Data operations (CRUD for businesses, reviews, favorites)
-- `/src/app/types/business.ts` - TypeScript interfaces for all data models
-- `/supabase/functions/server/index.tsx` - Backend server entry point
-
----
 
 ## Key Features
 
@@ -233,5 +176,6 @@ MIT License - Copyright (c) 2026 Rooted
 ## Credits
 
 Built with React, TypeScript, Tailwind CSS, and Supabase. UI components from shadcn/ui and Radix UI. Icons from Lucide. 
+
 
 ---
