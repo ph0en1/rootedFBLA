@@ -1,4 +1,6 @@
 # 2026 FBLA Coding and Programming Challenge
+<img width="1902" height="832" alt="image" src="https://github.com/user-attachments/assets/e5f56437-5e8c-45f3-8c6b-a331df21de6e" />
+
 # Rooted
 
 A web application what allows users to discover and support local businesses. Users can browse businesses, leave reviews, save favorites, and business owners can manage their listings and deals.
